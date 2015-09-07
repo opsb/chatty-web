@@ -1,5 +1,9 @@
+<h1>{{chatRoom.name}}</h1>
+
 <ul>
   {{#each messages as |message|}}
     <li>{{message.body}}</li>
   {{/each}}
 </ul>
+
+{{text-input onAdd="addMessage"}}

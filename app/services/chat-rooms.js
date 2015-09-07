@@ -14,37 +14,37 @@ let options = {
 };
 
 export default Ember.Service.extend({
+  find(id) {
 
-  where(criteria) {
-    let _this = this;
+  },
 
-    return _this._run(r.table('messages').filter(criteria)).then(function(cursor){
+
+  add(name) {
+    return this._run(r.table('chat_rooms').insert({name: name}));
+  },
+
+
+  all() {
+    var _this = this;
+
+    return _this._run(r.table('chat_rooms')).then(function(cursor){
       return _this._extractArray(cursor).then(function(messages){
-        _this._streamInto(messages, criteria);
+        _this._streamInto(messages);
         return messages;
       });
     });
   },
 
-  stream() {
-    var messages = [];
 
-    this._streamInto(messages);
-
-    return messages;
-  },
-
-  add(body, chatRoomId) {
-    return this._run(r.table('messages').insert({body: body, chatRoomId: chatRoomId}));
-  },
-
-  _streamInto(messages, criteria) {
-    this._run(r.table('messages').filter(criteria).changes({includeStates: true})).then(function(cursor){
+  _streamInto(messages) {
+    this._run(r.table('chat_rooms').changes({includeStates: true})).then(function(cursor){
       cursor.each(function(err, row){
+        console.log(row);
         messages.pushObject(row.new_val);
       });
     });
   },
+
 
   _extractArray(cursor) {
     return new Promise(function(resolve, reject){
@@ -55,11 +55,13 @@ export default Ember.Service.extend({
     });
   },
 
+
   _run(query) {
     return this._connection().then(function(conn){
       return query.run(conn);
     });
   },
+
 
   _connection() {
     var existingConnection = this.get('__connection__');

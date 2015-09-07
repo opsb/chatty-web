@@ -1,0 +1,11 @@
+{{text-input onAdd="addChatRoom"}}
+
+<ul>
+  {{#each all as |chatRoom|}}
+    <li>
+      {{#link-to 'chat-rooms.chat-room.index' chatRoom}}
+        {{chatRoom.name}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
