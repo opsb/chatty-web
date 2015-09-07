@@ -41,7 +41,9 @@ export default Ember.Service.extend({
   _streamInto(messages, criteria) {
     this._run(r.table('messages').filter(criteria).changes({includeStates: true})).then(function(cursor){
       cursor.each(function(err, row){
-        messages.pushObject(row.new_val);
+        if(!row.state) {
+          messages.pushObject(row.new_val);
+        }
       });
     });
   },

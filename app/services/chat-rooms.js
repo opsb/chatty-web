@@ -37,7 +37,7 @@ export default Ember.Service.extend({
 
 
   _streamInto(messages) {
-    this._run(r.table('chat_rooms').changes({includeStates: true})).then(function(cursor){
+    this._run(r.table('chat_rooms').changes()).then(function(cursor){
       cursor.each(function(err, row){
         console.log(row);
         messages.pushObject(row.new_val);
