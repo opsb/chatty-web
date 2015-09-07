@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   messages: Ember.inject.service('messages'),
 
   model() {
-    return this.get('messages').stream();
+    return this.get('messages').findAll();
   },
 
   actions: {
