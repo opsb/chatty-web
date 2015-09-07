@@ -3,9 +3,4 @@
 {{outlet}}
 
 {{message-input onAdd="addMessage"}}
-
-<ul>
-  {{#each model as |message|}}
-    <li>{{message.body}}</li>
-  {{/each}}
-</ul>
+{{messages-list messages=model}}
