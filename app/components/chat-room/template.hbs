@@ -1,9 +1,11 @@
 <h1>{{chatRoom.name}}</h1>
 
-<ul>
+<ul class="messages">
   {{#each messages as |message|}}
     <li>{{message.body}}</li>
   {{/each}}
 </ul>
 
-{{text-input onAdd="addMessage"}}
+<div class="message-editor">
+  {{text-input onAdd="addMessage"}}
+</div>

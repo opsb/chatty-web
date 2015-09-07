@@ -1,3 +1,26 @@
 & {
-  float:left;
+  position: absolute;
+  height: 100vh;
+  background-color: $dark-green;
+  width: 200px;
+  padding:40px;
+
+  input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: 7px;
+    }
+    li a {
+      color: white;
+      text-decoration: none;
+    }
+  }
 }

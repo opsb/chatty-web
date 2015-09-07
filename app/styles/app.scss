@@ -1,1 +1,11 @@
+body {
+  margin: 0;
+  font-family: helvetica neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@import "colours";
 @import "pod-styles";
