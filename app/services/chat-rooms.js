@@ -15,7 +15,7 @@ let options = {
 
 export default Ember.Service.extend({
   find(id) {
-
+    return this._run(r.table('chat_rooms').get(id));
   },
 
 

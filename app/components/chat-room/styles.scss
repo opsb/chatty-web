@@ -12,7 +12,10 @@
     margin: 0;
     height: 60px;
     padding-left: 40px;
+    padding-top: 10px;
     border-bottom: 1px solid #efefef;
+    background-color: $red;
+    color: white;
   }
 
   .messages {
@@ -20,7 +23,7 @@
     left: 40px;
     top: 60px;
     right: 0;
-    bottom: 70px;
+    bottom: 80px;
     padding: 0;
     list-style: none;
     margin-bottom: 5px;
@@ -28,20 +31,22 @@
   }
 
   .message-editor {
-    height: 70px;
+    height: 80px;
 
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 20px 40px;
+    padding: 27px 40px;
     width: 100%;
     border-top: 1px solid #efefef;
+    background-color: $grey;
 
     input {
       width: 100%;
       padding: 5px 5px;
       font-size: 1em;
+      border: none;
     }
   }
 }
