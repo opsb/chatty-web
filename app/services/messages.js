@@ -18,7 +18,7 @@ export default Ember.Service.extend({
   where(criteria) {
     let _this = this;
 
-    return _this._run(r.table('messages').filter(criteria)).then(function(cursor){
+    return _this._run(r.table('messages').filter(criteria).orderBy('createdAt')).then(function(cursor){
       return _this._extractArray(cursor).then(function(messages){
         _this._streamInto(messages, criteria);
         return messages;
@@ -35,7 +35,7 @@ export default Ember.Service.extend({
   },
 
   add(body, chatRoomId) {
-    return this._run(r.table('messages').insert({body: body, chatRoomId: chatRoomId}));
+    return this._run(r.table('messages').insert({body: body, chatRoomId: chatRoomId, createdAt: new Date()}));
   },
 
   _streamInto(messages, criteria) {
