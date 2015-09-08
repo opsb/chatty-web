@@ -19,6 +19,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "ember-component-css": "0.1.6",
     "broccoli-asset-rev": "^2.0.2",
     "ember-browserify": "^1.0.5",
     "ember-cli": "1.13.6",
@@ -35,9 +36,10 @@
     "ember-cli-sass": "^4.2.0",
     "ember-cli-sri": "^1.0.1",
     "ember-cli-uglify": "^1.0.1",
-    "ember-component-css": "0.1.6",
-    "ember-data": "1.13.7",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.3"
+  },
+  "dependencies": {
+    "rethinkdb-websocket-client": "^0.4.2"
   }
 }

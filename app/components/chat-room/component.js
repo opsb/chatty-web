@@ -14,6 +14,8 @@ export default Ember.Component.extend({
   chatRoom: null,
 
   didReceiveAttrs: function(){
+    this._super();
+    console.log('chat room', this.get('chatRoom.name'));
     this.set('messages', null);
     this.get('messagesService').where({
       chatRoomId: this.get('chatRoom.id')
@@ -24,7 +26,7 @@ export default Ember.Component.extend({
 
   actions: {
     addMessage(text) {
-      console.log('adding', text, this.get('chatRoom.id'));
+      console.log('adding', this.get('chatRoom.name'), '=>', text);
       this.get('messagesService').add(text, this.get('chatRoom.id'));
     }
   }
