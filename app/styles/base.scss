@@ -7,6 +7,6 @@ body {
   box-sizing: border-box;
 }
 
-@import "normalize";
-@import "flat-ui-colours";
-@import "pod-styles";
+h1, h2, h3, h4, h5, h6, p, li {
+  color: $flat-asbetos;
+}
