@@ -15,8 +15,9 @@ export default Ember.Component.extend({
 
   didReceiveAttrs: function(){
     this._super();
-    console.log('chat room', this.get('chatRoom.name'));
+
     this.set('messages', null);
+
     this.get('messagesService').where({
       chatRoomId: this.get('chatRoom.id')
     }).then(messages => {

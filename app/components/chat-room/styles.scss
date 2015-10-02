@@ -13,9 +13,7 @@
     height: 60px;
     padding-left: 40px;
     padding-top: 10px;
-    border-bottom: 1px solid #efefef;
-    background-color: $red;
-    color: white;
+    color: $flat-peter-river;
   }
 
   .messages {
@@ -37,16 +35,16 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 27px 40px;
+    padding: 20px 40px;
     width: 100%;
-    border-top: 1px solid #efefef;
-    background-color: $grey;
 
     input {
       width: 100%;
-      padding: 5px 5px;
+      padding: 10px 10px;
       font-size: 1em;
       border: none;
+      border: 2px solid $flat-silver;
+      border-radius: 5px;
     }
   }
 }
