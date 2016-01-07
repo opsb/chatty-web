@@ -1,7 +1,7 @@
 <h1>{{chatRoom.name}}</h1>
 
 <ul class="messages">
-  {{#each messages as |message|}}
+  {{#each chatRoom.messages as |message|}}
     <li>{{message.body}}</li>
   {{/each}}
 </ul>
